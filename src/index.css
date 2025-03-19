@@ -2,7 +2,8 @@
 
 :root {
     --yellow-theme-background-color: #1d1d1d;
-    --yellow-theme-main-color: #ffdd40;
+    /* --yellow-theme-main-color: #ffdd40; */
+    --yellow-theme-main-color: #46f1f0;
     --yellow-theme-sub-text-color: #fff;
     --yellow-theme-nav-background-color: #181818;
 }
