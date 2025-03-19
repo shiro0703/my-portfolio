@@ -1,0 +1,100 @@
+.contact {
+  &-content {
+    padding: 20px;
+
+    &-headerText {
+      color: var(--yellow-theme-main-color);
+      display: inline-block;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    &-form {
+      margin-top: 42px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &-inputWrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 38px;
+      }
+
+      div {
+        position: relative;
+
+        .nameInput,
+        .emailInput,
+        .messageInput {
+          width: 100%;
+          border: 2px solid var(--yellow-theme-main-color);
+          padding: 16px 12px;
+          background-color: transparent;
+          color: var(--yellow-theme-sub-text-color);
+          transition: all 0.5s ease;
+        }
+
+        .nameInput:focus,
+        .emailInput:focus,
+        .messageInput:focus {
+          outline: none;
+        }
+
+        .nameLabel,
+        .emailLabel,
+        .messageLabel {
+          font-weight: 500;
+          position: absolute;
+          top: 10px;
+          left: 12px;
+          transition: all 0.2s ease;
+          font-size: 1.4rem;
+          color: var(--yellow-theme-sub-text-color);
+        }
+
+        .nameInput:focus + .nameLabel,
+        .nameInput:valid + .nameLabel,
+        .messageInput:focus + .messageLabel,
+        .messageInput:valid + .messageLabel,
+        .emailInput:focus + .emailLabel,
+        .emailInput:not(:placeholder-shown) + .emailLabel {
+          top: -25px;
+          left: 0;
+          color: var(--yellow-theme-main-color);
+        }
+      }
+
+      &-button {
+        display: inline-block;
+        align-self: flex-start;
+        cursor: pointer;
+        padding: 10px 40px;
+        background: transparent;
+        color: var(--yellow-theme-main-color);
+        border: 1.5px solid var(--yellow-theme-main-color);
+        border-radius: 4px;
+        font-weight: 500;
+        font-size: 1.5rem;
+
+        &:hover {
+          background: var(--yellow-theme-main-color);
+          color: #000;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    &-content {
+      &-form {
+        &-inputWrapper {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
