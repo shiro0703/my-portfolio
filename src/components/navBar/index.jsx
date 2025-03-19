@@ -1,6 +1,6 @@
 import { FaReact, FaBars } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "./styles.scss";
 
@@ -29,6 +29,7 @@ const data = [
 
 const Navbar = () => {
   const [toggleIcon, setToggleIcon] = useState(false);
+  const location = useLocation();
 
   const handleToggleIcon = () => {
     setToggleIcon(!toggleIcon);
