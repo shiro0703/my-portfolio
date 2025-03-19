@@ -15,7 +15,11 @@ const Resume = () => {
     <section id="resume" className="resume">
       <PageHeader headerText="My Resume" icon={<IoIosDocument size={30} />} />
       <div className="download-button-wrapper">
-        <a href="/Resume.pdf" target="_blank" rel="noopener noreferrer">
+        <a
+          href={`${import.meta.env.BASE_URL}Resume.pdf`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <button>View Resume</button>
         </a>
       </div>
