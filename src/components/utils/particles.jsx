@@ -1,25 +1,36 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-// import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = (props) => {
   const [init, setInit] = useState(false);
-  // this should be run only once per application lifetime
+  const [themeColor, setThemeColor] = useState("#46F1F0"); // Default color
+
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
-      //await loadAll(engine);
-      //await loadFull(engine);
       await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
+  }, []);
+
+  // Function to update theme color based on body class
+  const updateThemeColor = () => {
+    const isLightMode = document.body.classList.contains("light-mode");
+    setThemeColor(isLightMode ? "#2d50b8" : "#46F1F0"); // Yellow for light mode, cyan for dark mode
+  };
+
+  useEffect(() => {
+    updateThemeColor(); // Set initial theme color
+
+    // Observe body class changes
+    const observer = new MutationObserver(updateThemeColor);
+    observer.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const particlesLoaded = (container) => {
@@ -28,39 +39,22 @@ const ParticlesComponent = (props) => {
 
   const options = useMemo(
     () => ({
-      background: {
-        color: {
-          value: "transparent",
-        },
-      },
+      background: { color: { value: "transparent" } },
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "repulse",
-          },
-          onHover: {
-            enable: true,
-            mode: "grab",
-          },
+          onClick: { enable: true, mode: "repulse" },
+          onHover: { enable: true, mode: "grab" },
         },
         modes: {
-          push: {
-            distance: 200,
-            duration: 15,
-          },
-          grab: {
-            distance: 150,
-          },
+          push: { distance: 200, duration: 15 },
+          grab: { distance: 150 },
         },
       },
       particles: {
-        color: {
-          value: "#46F1F0",
-        },
+        color: { value: themeColor },
         links: {
-          color: "#46F1F0",
+          color: themeColor,
           distance: 150,
           enable: true,
           opacity: 0.3,
@@ -69,32 +63,19 @@ const ParticlesComponent = (props) => {
         move: {
           direction: "none",
           enable: true,
-          outModes: {
-            default: "bounce",
-          },
+          outModes: { default: "bounce" },
           random: true,
           speed: 1,
           straight: false,
         },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 150,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 3 },
-        },
+        number: { density: { enable: true }, value: 150 },
+        opacity: { value: 0.5 },
+        shape: { type: "circle" },
+        size: { value: { min: 1, max: 3 } },
       },
       detectRetina: true,
     }),
-    []
+    [themeColor] // Update particles when theme changes
   );
 
   return <Particles id={props.id} init={particlesLoaded} options={options} />;

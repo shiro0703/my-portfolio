@@ -6,6 +6,19 @@
     --yellow-theme-main-color: #46f1f0;
     --yellow-theme-sub-text-color: #fff;
     --yellow-theme-nav-background-color: #181818;
+    --yellow-theme-button-text-color: #000;
+    --timeline-icon-background: #000;
+    --toggle-button-background: #333;
+}
+
+.light-mode {
+    --yellow-theme-background-color: #ffffff;
+    --yellow-theme-main-color: #2d50b8;
+    --yellow-theme-sub-text-color: #000;
+    --yellow-theme-nav-background-color: #f5f5f5;
+    --yellow-theme-button-text-color: #fff;
+    --timeline-icon-background: #fff;
+    --toggle-button-background: #d2d2d2;
 }
 
 * {
@@ -24,6 +37,7 @@ body {
     background: var(--yellow-theme-background-color);
     height: 100%;
     font-family: "Inter", sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #root {

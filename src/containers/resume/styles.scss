@@ -23,7 +23,7 @@
 
       &:hover {
         background: var(--yellow-theme-main-color);
-        color: #000;
+        color: var(--yellow-theme-button-text-color);
       }
     }
   }
@@ -42,6 +42,19 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    .vertical-timeline-element-icon {
+      background: var(--timeline-icon-background) !important;
+    }
+
+    .vertical-timeline::before {
+      background: var(--yellow-theme-main-color);
+    }
+
+    .vertical-timeline-element-icon.shadow-size-small {
+      box-shadow: 0 0 0 2px var(--yellow-theme-main-color),
+        inset 0 1px 0 rgba(0, 0, 0, 0.08), 0 2px 0 4px rgba(0, 0, 0, 0.05);
+    }
 
     &-headerText {
       display: inline-block;

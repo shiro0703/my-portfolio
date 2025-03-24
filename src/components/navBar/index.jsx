@@ -3,6 +3,7 @@ import { HiX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import "./styles.scss";
+import ThemeToggle from "../toggleButton/themeToggle";
 
 const data = [
   {
@@ -60,6 +61,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        <ThemeToggle />
         <div className="nav-icon" onClick={handleToggleIcon}>
           {toggleIcon ? <HiX size={30} /> : <FaBars size={30} />}
         </div>
