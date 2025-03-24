@@ -53,9 +53,32 @@
           text-transform: uppercase;
           color: var(--yellow-theme-sub-text-color);
         }
+
+        .progressbar-line {
+          position: relative;
+          width: 100%;
+
+          .tooltip {
+            position: absolute;
+            top: 1px;
+          }
+        }
       }
     }
   }
+}
+
+.rc-tooltip-placement-top {
+  padding: 5px 0;
+
+  .rc-tooltip-arrow {
+    border-top-color: var(--yellow-theme-main-color);
+  }
+}
+
+.rc-tooltip-inner {
+  background: var(--yellow-theme-main-color);
+  color: var(--yellow-theme-button-text-color);
 }
 
 @media (max-width: 880px) {

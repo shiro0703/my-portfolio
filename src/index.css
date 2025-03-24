@@ -9,6 +9,7 @@
     --yellow-theme-button-text-color: #000;
     --timeline-icon-background: #000;
     --toggle-button-background: #333;
+    --progressbar-trail-color: #fff;
 }
 
 .light-mode {
@@ -19,6 +20,7 @@
     --yellow-theme-button-text-color: #fff;
     --timeline-icon-background: #fff;
     --toggle-button-background: #d2d2d2;
+    --progressbar-trail-color: #e7e7e7;
 }
 
 * {
