@@ -1,7 +1,7 @@
 import { FaReact, FaBars } from "react-icons/fa";
 import { HiX } from "react-icons/hi";
 import { Link, useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./styles.scss";
 import ThemeToggle from "../toggleButton/themeToggle";
 
@@ -35,6 +35,20 @@ const Navbar = () => {
   const handleToggleIcon = () => {
     setToggleIcon(!toggleIcon);
   };
+
+  useEffect(() => {
+    // Disable scrolling only when menu is open in mobile view
+    if (toggleIcon && window.innerWidth < 768) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [toggleIcon]);
+
   return (
     <div>
       <nav className="navbar">

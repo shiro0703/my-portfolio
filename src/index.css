@@ -23,6 +23,29 @@
     --progressbar-trail-color: #e7e7e7;
 }
 
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    /* Width of the scrollbar */
+}
+
+/* Track (background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Scrollbar handle */
+::-webkit-scrollbar-thumb {
+    background: var(--yellow-theme-main-color);
+    border-radius: 10px;
+}
+
+/* On hover, make scrollbar darker */
+/* ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} */
+
 * {
     box-sizing: border-box;
     padding: 0;
