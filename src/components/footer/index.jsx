@@ -9,7 +9,11 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} Siow Wei Jun. All Rights Reserved.
         </p>
         <div className="footer-links">
-          <a href="https://www.linkedin.com/in/wei-jun-b425481a1">
+          <a
+            href="https://www.linkedin.com/in/wei-jun-b425481a1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <FaLinkedin size={24} />
           </a>
           <a
