@@ -9,6 +9,7 @@ import Skills from "./containers/skills";
 import Contact from "./containers/contact";
 import "./app.scss";
 import "./index.css";
+import Footer from "./components/footer";
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

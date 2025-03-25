@@ -1,0 +1,26 @@
+.footer {
+  background: var(--yellow-theme-main-color);
+  color: var(--yellow-theme-button-text-color);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &-links {
+    a {
+      color: var(--yellow-theme-button-text-color);
+      margin: 0 10px;
+      text-decoration: none;
+
+      &:hover {
+        color: var(--yellow-theme-button-text-color);
+      }
+    }
+  }
+}

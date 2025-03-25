@@ -2,7 +2,6 @@
 
 :root {
     --yellow-theme-background-color: #1d1d1d;
-    /* --yellow-theme-main-color: #ffdd40; */
     --yellow-theme-main-color: #46f1f0;
     --yellow-theme-sub-text-color: #fff;
     --yellow-theme-nav-background-color: #181818;
@@ -10,6 +9,7 @@
     --timeline-icon-background: #000;
     --toggle-button-background: #333;
     --progressbar-trail-color: #fff;
+    --yellow-theme-scrollbar: #2BB8B7;
 }
 
 .light-mode {
@@ -21,6 +21,7 @@
     --timeline-icon-background: #fff;
     --toggle-button-background: #d2d2d2;
     --progressbar-trail-color: #e7e7e7;
+    --yellow-theme-scrollbar: #3960d5;
 }
 
 /* Custom scrollbar */
@@ -37,7 +38,7 @@
 
 /* Scrollbar handle */
 ::-webkit-scrollbar-thumb {
-    background: var(--yellow-theme-main-color);
+    background: var(--yellow-theme-scrollbar);
     border-radius: 10px;
 }
 
